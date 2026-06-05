@@ -3,37 +3,37 @@ import './App.css'
 
 /* ---------- data ---------- */
 
-// Direct mapping of Jez's strengths to the Technical Support Specialist role
+// Mapping of Jez's strengths to AI / LLM and fullstack development work
 const FIT = [
   {
     n: '01',
-    title: 'Customer-facing troubleshooting',
-    body: "Two years as the first point of contact for cafe customers — diagnosing hardware, software, and network issues, then explaining the fix in plain language. Resolving problems for real people is where I started.",
+    title: 'Fullstack across the stack',
+    body: 'Comfortable in JavaScript, TypeScript, and Python, building and auditing both frontend and backend — React, Next.js, Node/Express, Firebase. I move through a codebase end to end rather than staying in one layer.',
   },
   {
     n: '02',
-    title: 'The web stack the role needs',
-    body: 'Daily, hands-on proficiency in HTML, CSS, and JavaScript (plus React). I can read a front-end issue a customer reports, reproduce it, and trace it to the actual cause rather than guessing.',
+    title: 'I work with AI every day',
+    body: 'Claude Code is part of my daily workflow, alongside the OpenAI and Anthropic APIs and n8n automation. I am comfortable reading, evaluating, and improving AI-generated code instead of just accepting it.',
   },
   {
     n: '03',
-    title: 'Clear, adaptable communication',
-    body: 'Fluent written and verbal English, sharpened through client-facing internship work and campus leadership. I tailor the explanation to the person — no canned scripts.',
+    title: 'Debugging & test automation',
+    body: 'I investigate problems to root cause and write automated tests to validate behavior — including on my thesis system — so changes hold up before they ship rather than breaking quietly.',
   },
   {
     n: '04',
-    title: 'Already in the support toolchain',
-    body: 'Hands-on experience with Jira for ticketing, Shopify and eCommerce platforms, and CRM/helpdesk systems — plus the curiosity to learn a new product fast and grow with it in a startup environment.',
+    title: 'I understand model behavior',
+    body: 'My thesis involved evaluating a YOLOv8n detection model and documenting where it succeeded and failed. I am genuinely curious about why a model passes or fails a task, which is the core of LLM-training work.',
   },
 ]
 
 const STACK = [
-  { group: 'Languages', items: ['C', 'C++', 'C#', 'JavaScript', 'TypeScript', 'Python', 'HTML5', 'CSS3'] },
+  { group: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'C', 'C++', 'C#', 'HTML5', 'CSS3'] },
   { group: 'Frontend', items: ['React.js', 'Next.js', 'Tailwind CSS'] },
-  { group: 'Support & eCommerce', items: ['Jira', 'Shopify', 'CRM / Helpdesk', 'Ticketing Systems'] },
-  { group: 'Collaboration & Tools', items: ['Git / GitHub', 'Test Automation', 'Notion', 'Microsoft 365', 'Google Workspace'] },
   { group: 'Backend & Databases', items: ['Node.js', 'Express.js', 'Firebase', 'Appwrite', 'MySQL', 'SQLite'] },
-  { group: 'AI & Automation', items: ['OpenAI API', 'Anthropic API', 'Claude Code', 'n8n'] },
+  { group: 'AI & Automation', items: ['Claude Code', 'Anthropic API', 'OpenAI API', 'n8n'] },
+  { group: 'Testing & Tools', items: ['Test Automation', 'Git / GitHub', 'VS Code', 'Notion'] },
+  { group: 'Support & eCommerce', items: ['Jira', 'Shopify', 'CRM / Helpdesk', 'Ticketing Systems'] },
   { group: 'Embedded & IoT', items: ['Arduino', 'Logic Gates', 'Mixed Signal Systems', 'VHDL (learning)'] },
   { group: 'Design & Prototyping', items: ['Figma', 'Canva', 'AutoCAD', 'SketchUp', 'Packet Tracer'] },
 ]
@@ -73,17 +73,6 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    role: 'Computer Technician',
-    org: 'TOJE Internet Cafe — Kananga',
-    period: 'Jun 2020 – Feb 2022',
-    relevant: true,
-    points: [
-      'Served as the first point of contact for customer technical issues — diagnosing and resolving hardware, software, and network problems.',
-      'Walked customers through fixes in plain language and handled recurring issues with patience and follow-through.',
-      'Kept every workstation and the cafe network online, minimizing downtime and keeping customers productive.',
-    ],
-  },
-  {
     role: 'Product Design Intern',
     org: 'Rural Net Inc. — Cebu City',
     period: 'Jun 2025 – Jul 2025',
@@ -92,6 +81,17 @@ const EXPERIENCE = [
       'Designed UI/UX web mockups for client-facing products, working from real user needs.',
       'Collaborated closely with the team to align every deliverable with brand identity guidelines.',
       'Produced marketing materials across multiple channels under tight timelines.',
+    ],
+  },
+  {
+    role: 'Computer Technician',
+    org: 'TOJE Internet Cafe — Kananga',
+    period: 'Jun 2020 – Feb 2022',
+    relevant: false,
+    points: [
+      'Diagnosed and resolved hardware, software, and network problems as the first point of contact.',
+      'Handled recurring issues with patience and follow-through, explaining fixes in plain language.',
+      'Kept every workstation and the cafe network online, minimizing downtime.',
     ],
   },
 ]
@@ -153,7 +153,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            Technical Support Specialist · Open to fully remote
+            Fullstack Developer · AI &amp; LLM Workflows
           </motion.p>
 
           <motion.h1
@@ -180,8 +180,8 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
           >
-            Troubleshooting, web technologies, and customer-focused problem solving —
-            for people, not scripts.
+            I build and audit fullstack web apps and work with AI tools every day —
+            JavaScript, TypeScript, and Python.
           </motion.p>
 
           <motion.div
@@ -220,14 +220,15 @@ function About() {
         </Reveal>
         <div className="col-body">
           <Reveal as="p" className="lede" i={1}>
-            A fresh-graduate Computer Engineer from Cebu who genuinely enjoys
-            untangling technical problems and helping people get unstuck.
+            A fresh-graduate Computer Engineer from Cebu who builds fullstack web
+            applications and uses AI tooling as part of everyday development.
           </Reveal>
           <Reveal as="p" i={2}>
-            I pair real web-development skills — HTML, CSS, JavaScript, and React —
-            with hands-on customer support experience. I'd rather understand a
-            customer's actual setup, goals, and frustration than reach for a canned
-            reply, and I'm at my best in fast-moving, learn-as-you-go environments.
+            I work across the stack in JavaScript, TypeScript, and Python — React and
+            Next.js on the front, Node and Firebase behind them — and I lean on
+            Claude Code and the Anthropic and OpenAI APIs daily. I like investigating
+            problems to root cause, writing tests that hold up, and understanding why
+            a model or a piece of code behaves the way it does.
           </Reveal>
         </div>
       </div>
@@ -239,9 +240,9 @@ function Fit() {
   return (
     <section id="fit" className="section section-tint">
       <div className="wrap">
-        <Reveal><span className="eyebrow">Why I'm a fit for this role</span></Reveal>
+        <Reveal><span className="eyebrow">What I bring</span></Reveal>
         <Reveal as="h2" className="section-title" i={1}>
-          Built for technical support
+          Built for AI &amp; fullstack work
         </Reveal>
         <div className="fit-grid">
           {FIT.map((f, i) => (
@@ -356,10 +357,10 @@ function Contact() {
       <div className="wrap">
         <Reveal><span className="eyebrow">Contact</span></Reveal>
         <Reveal as="h2" className="footer-title" i={1}>
-          Ready to help your customers succeed.
+          Let's build something solid.
         </Reveal>
         <Reveal as="p" className="footer-note" i={2}>
-          Available full-time, fully remote · 8 hours/day, 5–6 days/week · Cebu City, Philippines
+          Open to fullstack and AI / LLM project work · Remote · Cebu City, Philippines
         </Reveal>
         <div className="contact-grid">
           <Reveal className="contact-item" i={0}>
