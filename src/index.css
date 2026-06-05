@@ -1,0 +1,118 @@
+:root {
+  /* Japandi palette */
+  --paper: #f4f1ea;
+  --paper-deep: #ece7dc;
+  --oatmeal: #e8e2d5;
+  --clay: #c28a6b;
+  --clay-soft: #d4a98f;
+  --sage: #8a917b;
+  --sage-soft: #a4a995;
+  --ink: #332e29;
+  --ink-soft: #5c554c;
+  --ink-faint: #8c8478;
+  --hairline: #d8d1c4;
+  --wood: #b89a78;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+
+  --maxw: 1080px;
+  --radius: 10px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  font-size: 17px;
+  /* faint paper / linen grain */
+  background-image:
+    radial-gradient(var(--paper-deep) 1px, transparent 1px),
+    radial-gradient(var(--paper-deep) 1px, transparent 1px);
+  background-size: 42px 42px;
+  background-position: 0 0, 21px 21px;
+  background-attachment: fixed;
+}
+
+/* subtle noise overlay for tactility */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+::selection {
+  background: var(--clay-soft);
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* hairline divider */
+.rule {
+  height: 1px;
+  background: var(--hairline);
+  border: none;
+  margin: 0;
+}
+
+/* small caps section label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
